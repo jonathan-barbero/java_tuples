@@ -1,7 +1,8 @@
 package ar.com.job.java_tuples;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Objects;
 
 public final class TP1<C1> implements TP {
@@ -54,7 +55,12 @@ public final class TP1<C1> implements TP {
     }
 
     @Override
+    public List toList() {
+        return Collections.singletonList(f1);
+    }
+
+    @Override
     public Iterator<C1> iterator() {
-        return Arrays.asList(f1).iterator();
+        return toList().iterator();
     }
 }

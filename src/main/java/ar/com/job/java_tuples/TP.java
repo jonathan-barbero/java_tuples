@@ -1,8 +1,11 @@
 package ar.com.job.java_tuples;
 
 import java.io.Serializable;
+import java.util.List;
 
-public interface TP extends Iterable, Serializable,  Cloneable {
+public interface TP extends Iterable, Serializable, Cloneable {
 
-    public int length();
+    int length();
+
+    List toList();
 }
