@@ -115,10 +115,6 @@ class TP1Test {
 
         assertEquals(tp1Integer2.clone(), tp1Integer2);
         assertNotEquals(tp1Integer1, tp1Integer2.clone());
-
-        final TP1<String> tp1String1 = TP1.create("TEST");
-        final TP1<String> tp1String2 = TP1.create("test");
-        final TP1<String> tp1String3 = TP1.create(new StringBuilder("TES").append('T').toString());
     }
 
     @org.junit.jupiter.api.Test
@@ -150,5 +146,10 @@ class TP1Test {
 
         assertEquals(99999, iterator.next());
         assertFalse(iterator.hasNext());
+
+        final Iterator<Object> iterator2 = TP1.create(null).iterator();
+
+        assertNull(iterator2.next());
+        assertFalse(iterator2.hasNext());
     }
 }
